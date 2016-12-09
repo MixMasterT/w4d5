@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <%= button_to 'logout', session_url, method: :delete %>
+<% else %>
+  <% unless request.env['PATH_INFO'] == '/session/new' %>
+    <%= button_to 'log in', new_session_url, method: :get %>
+  <% end %>
+  <% unless request.env['PATH_INFO'] == '/users/new'%>
+    <%= button_to 'sign up', new_user_url, method: :get %>
+  <% end %>
+<% end %>
