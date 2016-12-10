@@ -1,0 +1,4 @@
+<h1> Edit <%= @post.title %> </h1>
+
+<%= render partial: 'posts_form', locals: { destination_url: post_url(@post),
+                                            button_text: 'Edit post' } %>

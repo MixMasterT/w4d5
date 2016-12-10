@@ -1,0 +1,17 @@
+<form action="<%= destination_url %>" method="post">
+  <%= auth_tok %>
+
+<label for='title'>Title</label>
+<input id='title' type="text" name="sub[title]" value="<%= @sub.title %>"/>
+
+<br/><br/>
+
+<label for='description'>description</label>
+<textarea id='description' name="sub[description]">
+  <%= @sub.description %>
+</textarea>
+
+<br/><br/>
+
+<input type='submit' value="<%= button_text %>">
+</form>

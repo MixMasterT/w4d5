@@ -1,0 +1,26 @@
+<form action="<%= destination_url %>" method="post">
+  <%= auth_tok %>
+
+<label for='title'>Title</label>
+<input id='title' type="text" name="post[title]" value="<%= @post.title %>"/>
+
+<br/><br/>
+
+<label for='content'>content</label>
+<textarea id='content' name="post[content]">
+  <%= @post.content %>
+</textarea>
+
+<br/><br/>
+
+<select name="post[sub_id]">
+  <% @subs.each do |sub| %>
+   <option value="<%= sub.id %>" <%= "checked" if @post.sub_id == sub.id %>>
+     <%= sub.title %>
+   </option>
+   <% end %>
+</select>
+<br/><br/>
+
+<input type='submit' value="<%= button_text %>">
+</form>

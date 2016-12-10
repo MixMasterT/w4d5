@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    #why @user = User.new
+    @user = User.new
   end
 
   def create
@@ -20,9 +20,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-
-  private
 
 
 end
